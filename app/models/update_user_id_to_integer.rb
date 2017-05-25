@@ -1,0 +1,2 @@
+class UpdateUserIdToInteger < ApplicationRecord
+end
