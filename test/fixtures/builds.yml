@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  build_name: MyString
+  start_date: MyString
+  end_date: MyString
+  site_address: MyString
+  hotel_link: MyString
+  family_information: MyString
+
+two:
+  build_name: MyString
+  start_date: MyString
+  end_date: MyString
+  site_address: MyString
+  hotel_link: MyString
+  family_information: MyString
