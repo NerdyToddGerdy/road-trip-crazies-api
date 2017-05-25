@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :join_tables
   resources :builds
   resources :users do
