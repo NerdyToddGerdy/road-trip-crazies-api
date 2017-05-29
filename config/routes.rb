@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :update_user_id_to_integers
+  resources :posts
   resources :join_tables
   resources :builds
   resources :users do

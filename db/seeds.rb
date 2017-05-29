@@ -23,3 +23,11 @@ Build.create([
       family_information: 'more to come'
    }
    ])
+
+   User.create([
+      {
+         username: 'Todd',
+         password: 'qwe123qwe',
+         is_admin: true
+      }
+      ])
