@@ -24,17 +24,17 @@
 #    }
 #    ])
 #
-#    User.create([
-#       {
-#          username: 'Todd',
-#          password: 'qwe123qwe',
-#          is_admin: true
-#       }
-#       ])
-
-   MyBuild.create([
+   User.create([
       {
-         user_id: 1,
-         build_id: 1
+         username: 'Todd',
+         password: 'qwe123qwe',
+         is_admin: true
       }
       ])
+
+   # MyBuild.create([
+   #    {
+   #       user_id: 1,
+   #       build_id: 1
+   #    }
+   #    ])
