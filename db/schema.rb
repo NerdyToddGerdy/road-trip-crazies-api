@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525220135) do
+ActiveRecord::Schema.define(version: 20170601180634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20170525220135) do
     t.index ["user_id"], name: "index_join_tables_on_user_id", using: :btree
   end
 
+  create_table "my_builds", force: :cascade do |t|
+    t.integer  "build_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["build_id"], name: "index_my_builds_on_build_id", using: :btree
+    t.index ["user_id"], name: "index_my_builds_on_user_id", using: :btree
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "comment"
@@ -53,4 +62,6 @@ ActiveRecord::Schema.define(version: 20170525220135) do
 
   add_foreign_key "join_tables", "builds"
   add_foreign_key "join_tables", "users"
+  add_foreign_key "my_builds", "builds"
+  add_foreign_key "my_builds", "users"
 end
