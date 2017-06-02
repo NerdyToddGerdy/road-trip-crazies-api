@@ -35,7 +35,9 @@ class UsersController < ApplicationController
 
    # DELETE /users/1
    def destroy
-      @user.destroy
+      id = params[:id]
+      MyBuild.where(user_id: id).destroy_all
+      User.find(id).destroy
    end
 
    def login

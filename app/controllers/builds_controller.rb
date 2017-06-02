@@ -35,7 +35,10 @@ class BuildsController < ApplicationController
 
   # DELETE /builds/1
   def destroy
-    @build.destroy
+   #  @build.destroy
+    id = params[:id]
+    MyBuild.where(build_id: id).destroy_all
+    Build.find(id).destroy
   end
 
   private
