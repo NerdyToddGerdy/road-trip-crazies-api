@@ -5,4 +5,5 @@ class User < ApplicationRecord
    has_many :my_builds
    has_many :builds, through: :my_builds
    has_many :posts
+   has_many :messages
 end
