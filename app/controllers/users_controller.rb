@@ -37,7 +37,9 @@ class UsersController < ApplicationController
    def destroy
       id = params[:id]
       MyBuild.where(user_id: id).destroy_all
+      # Message.where(user_id: id).destroy_all
       User.find(id).destroy
+
    end
 
    def login
