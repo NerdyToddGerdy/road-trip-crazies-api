@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20170629205204) do
     t.index ["user_id"], name: "index_join_tables_on_user_id", using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string   "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "username"
+  end
+
+  create_table "my_builds", force: :cascade do |t|
+    t.integer  "build_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["build_id"], name: "index_my_builds_on_build_id", using: :btree
+    t.index ["user_id"], name: "index_my_builds_on_user_id", using: :btree
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "comment"
@@ -50,8 +67,11 @@ ActiveRecord::Schema.define(version: 20170629205204) do
     t.datetime "updated_at",      null: false
     t.boolean  "is_admin"
     t.string   "picture"
+    t.string   "photo"
   end
 
   add_foreign_key "join_tables", "builds"
   add_foreign_key "join_tables", "users"
+  add_foreign_key "my_builds", "builds"
+  add_foreign_key "my_builds", "users"
 end

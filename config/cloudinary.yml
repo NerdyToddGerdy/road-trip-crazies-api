@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: toddles
+  api_key: '464326275517746'
+  api_secret: SGFxqvO4lzuxU8GoBl4rVf7gkZc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: toddles
+  api_key: '464326275517746'
+  api_secret: SGFxqvO4lzuxU8GoBl4rVf7gkZc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: toddles
+  api_key: '464326275517746'
+  api_secret: SGFxqvO4lzuxU8GoBl4rVf7gkZc
+  enhance_image_tag: true
+  static_image_support: false

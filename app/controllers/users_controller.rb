@@ -36,17 +36,21 @@ class UsersController < ApplicationController
 
    # DELETE /users/1
    def destroy
-      @user.destroy
+      id = params[:id]
+      MyBuild.where(user_id: id).destroy_all
+      # Message.where(user_id: id).destroy_all
+      User.find(id).destroy
+
    end
 
    def login
       user = User.find_by(username: params[:user][:username])
-      p user
-      p params
-      p user.authenticate(params[:user][:password])
+      # p user
+      # p params
+      # p user.authenticate(params[:user][:password])
       if user && user.authenticate(params[:user][:password])
          token = create_token(user.id, user.username)
-         render json: { status: 200, user: user, token: token }
+         render json: { status: 200, user: user, token: token }.to_json(include: :builds)
       else
          render json: { status: 401, message: "Unauthorized" }
       end
@@ -76,7 +80,7 @@ class UsersController < ApplicationController
 
    # Only allow a trusted parameter "white list" through.
    def user_params
-      params.require(:user).permit(:username, :password, :password_digest)
+      params.require(:user).permit(:username, :password, :password_digest, :is_admin)
    end
 
 end
