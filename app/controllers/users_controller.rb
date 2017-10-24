@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       @users = User.all
 
       render json: @users.to_json(include: :builds)
+      # render json: {thing: "hello world" }
    end
 
    # GET /users/1
