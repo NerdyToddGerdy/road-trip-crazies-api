@@ -5,29 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Build.create([
-#    {
-#       build_name: 'Habitat for Humanity Susequehanna in Bel Air,MD' ,
-#       start_date: 'July 7th',
-#       end_date: 'July 9th',
-#       site_address: 'comming soon',
-#       hotel_link: 'Also coming soon',
-#       family_information: 'we shall see'
-#    },
-#    {
-#       build_name: 'Fauquier Habitat For Humanity',
-#       start_date: 'October 28th',
-#       end_date: 'October 30th',
-#       site_address: '110 Haiti Street, Warrentron, Va 20186',
-#       hotel_link: 'https://www.ihg.com/holidayinnexpress/hotels/us/en/warrenton/wrvva/hoteldetail',
-#       family_information: 'more to come'
-#    }
-#    ])
+Build.create([
+   {
+      build_name: 'Habitat for Humanity Susequehanna in Bel Air,MD' ,
+      start_date: 'July 7th',
+      end_date: 'July 9th',
+      site_address: 'comming soon',
+      hotel_link: 'Also coming soon',
+      family_information: 'we shall see'
+   },
+   {
+      build_name: 'Fauquier Habitat For Humanity',
+      start_date: 'October 28th',
+      end_date: 'October 30th',
+      site_address: '110 Haiti Street, Warrentron, Va 20186',
+      hotel_link: 'https://www.ihg.com/holidayinnexpress/hotels/us/en/warrenton/wrvva/hoteldetail',
+      family_information: 'more to come'
+   }
+   ])
 #
    User.create([
       {
          username: 'Todd',
          password: 'qwe123qwe',
+         photo: 'http://res.cloudinary.com/toddles/image/upload/v1508869077/sfqmax4eo7k7tmoztlnl.jpg',
          is_admin: true
       }
       ])

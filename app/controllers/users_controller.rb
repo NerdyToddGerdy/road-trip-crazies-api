@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
    # GET /users
    def index
-      # @users = User.all
+      @users = User.all
 
       render json: @users.to_json(include: :builds)
       # render json: {thing: "hello world" }
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
 
    # Only allow a trusted parameter "white list" through.
    def user_params
-      params.require(:user).permit(:username, :password, :password_digest, :is_admin)
+      params.require(:user).permit(:username, :password, :photo, :password_digest, :is_admin)
    end
 
 end
